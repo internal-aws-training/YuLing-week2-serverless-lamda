@@ -1,0 +1,1 @@
+aws cloudformation deploy --region ap-southeast-1 --template s3.yml --stack-name yuling-s3-01 --profile aws-training

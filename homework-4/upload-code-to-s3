@@ -1,0 +1,6 @@
+#!/bin/bash
+cd $(dirname $0)
+
+zip function.zip index.js
+aws s3 --region ap-southeast-1 cp function.zip s3://yuling-bucket-01 --profile aws-training
+
