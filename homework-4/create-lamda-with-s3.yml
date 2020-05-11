@@ -1,0 +1,12 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: VPC function.
+Resources:
+  Function: 
+    Type: AWS::Lambda::Function
+    Properties: 
+      Handler: index.handler
+      Role: arn:aws:iam::494526681395:role/yuling-lambda-ex
+      Code: 
+        S3Bucket: yuling-bucket-01
+        S3Key: function.zip
+      Runtime: nodejs12.x
