@@ -1,0 +1,5 @@
+#!/bin/bash -eu
+cd $(dirname $0)/..
+
+aws iam create-role --role-name ${1:-lambda-ex} --assume-role-policy-document file://./deployment/lamda-trust-policy.json  --profile aws-rea-playground
+aws iam attach-role-policy --role-name lambda-ex --policy-arn arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole --profile aws-rea-playground

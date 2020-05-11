@@ -1,0 +1,6 @@
+#!/bin/bash -eu
+
+aws lambda invoke --function-name ${1:-function-created-by-yl} --payload '{"key": "value"}' out --profile aws-rea-playground
+sed -i'' -e 's/"//g' out
+sleep 15
+aws logs get-log-events --log-group-name /aws/lambda/${1:-function-created-by-yl} --log-stream-name $(cat out) --limit 5 --profile aws-rea-playground

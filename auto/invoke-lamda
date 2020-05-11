@@ -1,0 +1,5 @@
+#!/bin/bash
+
+aws lambda invoke --function-name function-created-by-yl out --log-type Tail \
+--profile aws-rea-playground \
+--query 'LogResult' --output text | base64 -D
