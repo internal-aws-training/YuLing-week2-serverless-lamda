@@ -1,0 +1,4 @@
+#!/bin/bash -eu
+cd $(dirname $0)
+
+aws cloudformation deploy --region ap-southeast-1 --template create-lamda.yml --stack-name yuling-deploy-lamda-stack --parameter-overrides Key1=Value1 Key2=Value2 --profile aws-training
