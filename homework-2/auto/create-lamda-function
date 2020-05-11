@@ -4,4 +4,4 @@ zip function.zip ${1:-index.js}
 aws lambda create-function --function-name ${2:-function-created-by-yl} \
 --zip-file fileb://function.zip --handler index.handler --runtime nodejs12.x \
 --role arn:aws:iam::242057567132:role/lambda-ex \
---profile aws-rea-playground
+--profile aws-training 
