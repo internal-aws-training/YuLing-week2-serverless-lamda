@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  primer:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: yuling-lamda-cloudformation-with-code
+      Runtime: nodejs12.x
+      Role: arn:aws:iam::494526681395:role/yuling-lambda-ex
+      Handler: index.handler
+      Code:
+        ZipFile: |
+          exports.handler = function(event, context) {
+                console.log("ENVIRONMENT VARIABLES\n" + JSON.stringify(process.env, null, 2))
+                return context.logStreamName
+          }
+

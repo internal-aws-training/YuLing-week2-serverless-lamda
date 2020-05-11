@@ -1,0 +1,5 @@
+#!/bin/bash
+
+aws lambda invoke --region ap-southeast-1 --function-name yuling-lamda-cloudformation-with-code out --log-type Tail \
+--profile aws-training \
+--query 'LogResult' --output text | base64 -D
